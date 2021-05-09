@@ -36,8 +36,10 @@ class GccCrossM68kAT10 < Formula
     
     mkdir "../build" do
       system "../gcc-#{version}/configure", *args
-      system "make", "all-gcc", "all-target-libgcc", "all-target-libstdc++-v3"
-      system "make", "install-gcc", "install-target-libgcc", "install-target-libstdc++-v3"
+      system "make", "all-gcc", "all-target-libgcc"
+      system "make", "install-gcc", "install-target-libgcc" 
+      system "make", "all-target-libstdc++-v3"
+      system "make", "install-target-libstdc++-v3"
     end
   end
 
